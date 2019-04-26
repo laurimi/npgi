@@ -15,6 +15,8 @@ BiBTeX:
   year    = 2019
 }
 ```
+# Domains
+You can find descriptions of the two planning domains MAV and information gathering rovers from the AAMAS 2019 paper in the subfolder `problems`.
 
 # Code for NPGI?
 We are working on releasing the code for (Dec-)POMDP planning with reward functions that are non-linear in the joint belief. Stay tuned!
