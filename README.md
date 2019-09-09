@@ -27,8 +27,6 @@ BiBTeX:
   year    = 2019
 }
 ```
-# Domains
-You can find descriptions of the two planning domains MAV and information gathering rovers from the AAMAS 2019 paper in the subfolder `problems`.
 
 # Compilation and installation
 Your compiler must support C++14.
