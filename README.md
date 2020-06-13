@@ -11,11 +11,33 @@ Such Dec-POMDPs can model decentralized information gathering tasks, such as mon
 The algorithm represents policies as finite state controllers, or policy graphs.
 The policy graphs are iteratively improved by finding the action labels of nodes, and the configuration of the out-edges corresponding to observations.
 
+## Blog post
+You can find a high-level summary of this work from [this blog post](https://laurimi.github.io/research/2020/06/13/active-perception.html).
+
 ## Publications
-For more background information on the algorithm and Dec-POMDPs with information-theoretic rewards, you can refer to the paper:
+For more background information on the algorithm and Dec-POMDPs with information-theoretic rewards, you can refer to the papers:
 
-Mikko Lauri, Joni Pajarinen, Jan Peters. *Information gathering in decentralized POMDPs by policy graph improvement*, in 18th International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2019)
+1. Mikko Lauri, Joni Pajarinen, Jan Peters. *Multi-agent active information gathering in discrete and continuous-state decentralized POMDPs by policy graph improvement*, in Autonomous Agents and Multi-Agent Systems, 42(34), 2020.
 
+[Link to open access version](https://link.springer.com/article/10.1007/s10458-020-09467-6)
+
+BiBTeX:
+```
+@article{Lauri2020multiagent,
+  	author = {Lauri, Mikko and Pajarinen, Joni and Peters, Jan},
+	title = {Multi-agent active information gathering in discrete and continuous-state decentralized POMDPs by policy graph improvement},
+	year = {2020},
+	volume = {34},
+	number = {42},
+	year = {2020},
+	doi = {10.1007/S10458-020-09467-6},
+	journal = {Autonomous Agents and Multi-Agent Systems}
+}
+```
+
+2. Mikko Lauri, Joni Pajarinen, Jan Peters. *Information gathering in decentralized POMDPs by policy graph improvement*, in 18th International Conference on Autonomous Agents and Multiagent Systems (AAMAS 2019)
+
+[Link to conference proceedings](https://dl.acm.org/doi/abs/10.5555/3306127.3331815)
 You can find a [preprint on arXiv](https://arxiv.org/abs/1902.09840).
 
 BiBTeX:
@@ -90,9 +112,11 @@ If you want to modify the information reward, you can do so by modifying the two
 
 ### Solving a continuous-state Dec-POMDP
 You can look at the files `solve_graphsensing.cpp`, `GraphSensingProblem.h` and `GraphSensingProblem.cpp` to see how you can define your own problem with a continuous state.
+More details on this problem and the algorithm variant that solves them is provided in the journal article linked above.
+
 
 # Authors
-* Mikko Lauri - University of Hamburg, Hamburg, Germany
+* [Mikko Lauri](https://laurimi.github.io) - University of Hamburg, Hamburg, Germany
 
 # License
 Licensed under the Apache 2.0 license - see [LICENSE](LICENSE) for details.
