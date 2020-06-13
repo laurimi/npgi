@@ -15,9 +15,10 @@ The policy graphs are iteratively improved by finding the action labels of nodes
 You can find a high-level summary of this work from [this blog post](https://laurimi.github.io/research/2020/06/13/active-perception.html).
 
 ## Publications
-For more background information on the algorithm and Dec-POMDPs with information-theoretic rewards, you can refer to the papers:
+For more background information on the algorithm and Dec-POMDPs with information-theoretic rewards, you can refer to the publications below.
+If you find this repository useful, please consider citing them.
 
-1. Mikko Lauri, Joni Pajarinen, Jan Peters. *Multi-agent active information gathering in discrete and continuous-state decentralized POMDPs by policy graph improvement*, in Autonomous Agents and Multi-Agent Systems, 42(34), 2020.
+1. Mikko Lauri, Joni Pajarinen, Jan Peters. *Multi-agent active information gathering in discrete and continuous-state decentralized POMDPs by policy graph improvement*, Autonomous Agents and Multi-Agent Systems, 42(34), 2020.
 
 [Link to open access version](https://link.springer.com/article/10.1007/s10458-020-09467-6)
 
