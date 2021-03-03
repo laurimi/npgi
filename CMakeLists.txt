@@ -36,30 +36,33 @@ endif()
 
 
 ## MADP toolbox
+set(EXT_DIR "${CMAKE_CURRENT_BINARY_DIR}/third-party/ExternalProject")
+message(STATUS "EXT_DIR: ${EXT_DIR}")
+
 if(MADPPATH)
 	set(MADP_INCLUDE_DIRECTORIES ${MADPPATH}/include)
 	set(MADP_LIBRARY_PATH ${MADPPATH}/lib)
 else()
 	include(ExternalProject)
-	set(EXTERNALS_DIR ${CMAKE_CURRENT_BINARY_DIR}/external)
 	ExternalProject_Add(project_madp
-	    URL               https://github.com/MADPToolbox/MADP/archive/v0.4.1.tar.gz
-	    URL_HASH          MD5=b385c9d4c2b478c0b0611774ee7f26bf
-	    PREFIX            ${EXTERNALS_DIR}/madp
+		GIT_REPOSITORY	   https://github.com/MADPToolbox/MADP
+		GIT_TAG			   a6c1bb7ca18236fc7214d05c6c08dd7d515c4e96
+	    PREFIX            ${EXT_DIR}/madp
 	    BUILD_IN_SOURCE	  1
-	    CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=<INSTALL_DIR>
-	    BUILD_COMMAND     make -j12
-	    INSTALL_COMMAND   make install
+	    CONFIGURE_COMMAND sh <SOURCE_DIR>/autogen.sh && <SOURCE_DIR>/configure --prefix=<INSTALL_DIR>
+	    BUILD_COMMAND make
+	    INSTALL_COMMAND make install
 	)
 
-	ExternalProject_Get_Property(project_madp INSTALL_DIR)
-	set(MADP_INCLUDE_DIRECTORIES ${INSTALL_DIR}/include)
+	ExternalProject_Get_Property(project_madp INSTALL_DIR BINARY_DIR SOURCE_DIR)
+    set(MADP_INCLUDE_DIRECTORIES ${INSTALL_DIR}/include ${SOURCE_DIR}/src/include)
 	set(MADP_LIBRARY_PATH ${INSTALL_DIR}/lib)
 
 	message(STATUS "MADP_INCLUDE_DIRECTORIES: ${MADP_INCLUDE_DIRECTORIES}")
-
+	message(STATUS "MADP_LIBRARY_PATH: ${MADP_LIBRARY_PATH}")
 	add_library(MADP STATIC IMPORTED)
 	set_property(TARGET MADP PROPERTY IMPORTED_LOCATION ${MADP_LIBRARY_PATH}/libMADP-0.4.1.so)
+
 	add_dependencies(MADP project_madp)
 	
 endif()

@@ -11,8 +11,10 @@ Such Dec-POMDPs can model decentralized information gathering tasks, such as mon
 The algorithm represents policies as finite state controllers, or policy graphs.
 The policy graphs are iteratively improved by finding the action labels of nodes, and the configuration of the out-edges corresponding to observations.
 
-## Blog post
+## Blog post and related work
 You can find a high-level summary of this work from [this blog post](https://laurimi.github.io/research/2020/06/13/active-perception.html).
+
+The follow-up to this work is [Multi-agent active perception with prediction rewards](https://github.com/laurimi/multiagent-prediction-reward) that you may be interested to check out as well.
 
 ## Publications
 For more background information on the algorithm and Dec-POMDPs with information-theoretic rewards, you can refer to the publications below.
@@ -59,7 +61,7 @@ Required system libraries:
 - Boost libraries: program_options regex graph
 
 Required external libraries:
-- [MADP toolbox](https://github.com/MADPToolbox/MADP) v.0.4.1 will be installed automatically, or you can provide a path where to find the library if you have it already by `cmake` options `-DMADPPATH=/path/to/madp`
+- [MADP toolbox](https://github.com/MADPToolbox/MADP)  will be installed automatically, or you can provide a path where to find the library if you have it already by `cmake` options `-DMADPPATH=/path/to/madp`. If you need a different version than the auto-installed one,  modify the `GIT_TAG` in `CMakeLists.txt` or use the `DMADPPATH` variable to point to your preferred installation.
 
 
 ## How to compile
